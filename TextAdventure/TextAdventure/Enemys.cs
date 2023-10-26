@@ -14,6 +14,7 @@ namespace TextAdventure
         public int Skade;
 
 
+
         public static List<Fjender> fjender = new List<Fjender>
         {
             new Fjender("Mus", 2, 1),
@@ -21,21 +22,20 @@ namespace TextAdventure
             new Fjender("Drage", 15, 8)
 
         };
-
-
         public Fjender (string name, int hp, int skade)
         {
             Name = name;
             HP = hp;
             Skade = skade;
         }
-
-        public void angreb()
+        public void angreb(Spiller target)
         {
             Console.WriteLine(Name + " angriber dig og gør " + Skade);
-            
+            target.HP -= Skade;
 
         }
+
+
 
     }
 
