@@ -40,6 +40,12 @@ class Program
             Console.WriteLine("Du ankommer til " + currentLocation.Name + ".");
             Console.WriteLine(currentLocation.Description);
 
+            Console.WriteLine("I skoven kan du komme til");
+            for (int i = 0; i < locations[0].Avaliblelocations.Count; i++)
+            {
+                Console.WriteLine(locations[0].Avaliblelocations[i].Name);
+            }
+
             Console.WriteLine("Hvad vil du?");
             Console.WriteLine("1. Udforske");
             Console.WriteLine("2. Forlade spillet");
