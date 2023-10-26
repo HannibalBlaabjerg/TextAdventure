@@ -8,9 +8,12 @@ namespace TextAdventure
 {
     class Spiller
     {
+        public string Name { get; }
         int HP = 10;
 
-
-
+        public Spiller(string name)
+        {
+            Name = name;
+        }
     }
 }
