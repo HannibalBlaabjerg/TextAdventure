@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TextAdventure
 {
 
-    class rat
+    class mus
     {
         int HP = 2;
 
@@ -30,7 +30,7 @@ namespace TextAdventure
 
     }
 
-    class Dragon
+    class Drage
     {
         int HP = 15;
 
