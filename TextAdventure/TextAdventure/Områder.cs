@@ -11,9 +11,9 @@ namespace TextAdventure
     {
        public static List<Location> locations = new List<Location>
         {
-            new Location("Forest", "A dense forest with tall trees and wildlife."),
-            new Location("Cave", "A dark and mysterious cave entrance."),
-            new Location("Beach", "A sandy beach with waves crashing on the shore.")
+            new Location("Skov", "Meget farlig skov."),
+            new Location("Grotte", "Meget sort grotte."),
+            new Location("Strand", "Meget sandet strand.")
         };
         public string Name { get; }
         public string Description { get; }
@@ -22,6 +22,8 @@ namespace TextAdventure
         {
             Name = name;
             Description = description;
+            
+            
         }
     }
 

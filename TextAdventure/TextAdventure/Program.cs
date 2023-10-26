@@ -10,24 +10,24 @@ class Program
         // Create a list of locations
         List<Location> locations = new List<Location>
         {
-            new Location("Forest", "A dense forest with tall trees and wildlife."),
-            new Location("Cave", "A dark and mysterious cave entrance."),
-            new Location("Beach", "A sandy beach with waves crashing on the shore.")
+            new Location("Skov", "Meget farlig Skov."),
+            new Location("Grotte", "Meget sort Grotte."),
+            new Location("Strand", "Meget sandet Strand.")
 
         };
 
         // Initialize the player
-        Player player = new Player("Adventurer");
+        Player player = new Player("Rejsene");
 
         // Start the game
-        Console.WriteLine("Welcome, " + player.Name + "!");
-        Console.WriteLine("You are on a quest to find the hidden treasure.");
-        Console.WriteLine("Choose your path:");
+        Console.WriteLine("Velkommen, " + player.Name + "!");
+        Console.WriteLine("Du er på en rejse for at få skejs.");
+        Console.WriteLine("Vælg din vej:");
 
         // Main game loop
         while (true)
         {
-            Console.WriteLine("Locations:");
+            Console.WriteLine("Områder:");
             for (int i = 0; i < locations.Count; i++)
             {
                 Console.WriteLine(i + ". " + locations[i].Name);
@@ -36,22 +36,24 @@ class Program
             int choice = GetChoice(0, locations.Count - 1);
             Location currentLocation = locations[choice];
 
-            Console.WriteLine("You arrive at the " + currentLocation.Name + ".");
+            Console.WriteLine("Du ankommer til " + currentLocation.Name + ".");
             Console.WriteLine(currentLocation.Description);
 
-            Console.WriteLine("What do you want to do?");
-            Console.WriteLine("1. Explore");
-            Console.WriteLine("2. Quit");
+            Console.WriteLine("Hvad vil du?");
+            Console.WriteLine("1. Udforske");
+            Console.WriteLine("2. Forlade spillet");
             int action = GetChoice(1, 2);
 
             if (action == 2)
             {
-                Console.WriteLine("Thanks for playing, " + player.Name + "!");
+                Console.WriteLine("Ingen skejs til dig nørd, L, " + player.Name + "!");
                 break;
             }
 
             // Explore the location
-            Console.WriteLine("You search the " + currentLocation.Name + " but find nothing.");
+            Console.WriteLine("Du udforsker " + currentLocation.Name + " og finder 3 våben.");
+
+
         }
     }
 
