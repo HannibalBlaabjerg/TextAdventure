@@ -6,6 +6,22 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("Velkommen til Text baseret spil");
+        Console.WriteLine("Tryk på en knap for at fortsætte");
+        Console.ReadKey(true);
+        Console.Clear();
+
+        Console.WriteLine("Skriv dit navn:");
+        string navn = Console.ReadLine();
+        while(navn.Length <=1 && navn.Length >= 10)
+        {
+            Console.WriteLine("Dit navn skal være mellem 1 og 10 tegn");
+            navn = Console.ReadLine();
+        }
+        Console.WriteLine("Dit navn er " + navn);
+        Console.WriteLine("Tryk på en knap for at fortsætte");
+        Console.ReadKey(true);
+        Console.Clear();
         
         // Create a list of locations
         List<Location> locations = new List<Location>
@@ -40,11 +56,6 @@ class Program
             Console.WriteLine("Du ankommer til " + currentLocation.Name + ".");
             Console.WriteLine(currentLocation.Description);
 
-            Console.WriteLine("I skoven kan du komme til");
-            for (int i = 0; i < locations[0].Avaliblelocations.Count; i++)
-            {
-                Console.WriteLine(locations[0].Avaliblelocations[i].Name);
-            }
 
             Console.WriteLine("Hvad vil du?");
             Console.WriteLine("1. Udforske");
@@ -57,6 +68,7 @@ class Program
                 break;
             }
 
+
             // Explore the location
             Console.WriteLine("Du udforsker " + currentLocation.Name + " og finder en bunke med våben.");
             Console.WriteLine("hvilket våben vælger du");
@@ -64,8 +76,8 @@ class Program
             Console.WriteLine("2. En Sten");
             Console.WriteLine("3. En Sej Pind");
             int våbenvalg = GetChoice(1, 3);
-            
 
+            Console.WriteLine("Du går videre fra " + currentLocation.Name + "");
 
         }
     }
