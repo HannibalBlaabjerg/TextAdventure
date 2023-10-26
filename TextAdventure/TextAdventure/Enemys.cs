@@ -29,6 +29,14 @@ namespace TextAdventure
             HP = hp;
             Skade = skade;
         }
+
+        public void angreb()
+        {
+            Console.WriteLine(Name + " angriber dig og gør " + Skade);
+            
+
+        }
+
     }
 
 }
