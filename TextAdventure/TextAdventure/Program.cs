@@ -15,9 +15,10 @@ class Program
             new Location("Strand", "Meget sandet Strand.")
 
         };
+        locations[0].Avaliblelocations.Add(locations[1]);
 
         // Initialize the player
-        Player player = new Player("Rejsene");
+        Spiller player = new Spiller("Rejsene");
 
         // Start the game
         Console.WriteLine("Velkommen, " + player.Name + "!");
@@ -51,7 +52,13 @@ class Program
             }
 
             // Explore the location
-            Console.WriteLine("Du udforsker " + currentLocation.Name + " og finder 3 våben.");
+            Console.WriteLine("Du udforsker " + currentLocation.Name + " og finder en bunke med våben.");
+            Console.WriteLine("hvilket våben vælger du");
+            Console.WriteLine("1. Et Sværd");
+            Console.WriteLine("2. En Sten");
+            Console.WriteLine("3. En Sej Pind");
+            int våbenvalg = GetChoice(1, 3);
+            
 
 
         }
@@ -74,25 +81,3 @@ class Program
     }
 }
 
-class Location
-{
-    public string Name { get; }
-    public string Description { get; }
-
-    public Location(string name, string description)
-    {
-        Name = name;
-        Description = description;
-    }
-}
-
-class Player
-{
-    public string Name { get; }
-
-    public Player(string name)
-    {
-        Name = name;
-    }
-    
-}

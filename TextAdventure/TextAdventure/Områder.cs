@@ -9,12 +9,8 @@ namespace TextAdventure
     
      class Location
     {
-       public static List<Location> locations = new List<Location>
-        {
-            new Location("Skov", "Meget farlig skov."),
-            new Location("Grotte", "Meget sort grotte."),
-            new Location("Strand", "Meget sandet strand.")
-        };
+        public List<Location> Avaliblelocations = new List<Location>();
+
         public string Name { get; }
         public string Description { get; }
 
@@ -22,8 +18,9 @@ namespace TextAdventure
         {
             Name = name;
             Description = description;
-            
-            
+
+
+
         }
     }
 
