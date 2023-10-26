@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace TextAdventure
 {
-    internal class Location
+    
+     class Location
     {
+       public static List<Location> locations = new List<Location>
+        {
+            new Location("Skov", "Meget farlig skov."),
+            new Location("Grotte", "Meget sort grotte."),
+            new Location("Strand", "Meget sandet strand.")
+        };
         public string Name { get; }
         public string Description { get; }
 
@@ -15,6 +22,8 @@ namespace TextAdventure
         {
             Name = name;
             Description = description;
+            
+            
         }
     }
 

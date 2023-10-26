@@ -6,7 +6,29 @@ using System.Threading.Tasks;
 
 namespace TextAdventure
 {
-    internal class Enemys
+
+    class Fjender
     {
+        public string Name;
+        public int HP;
+        public int Skade;
+
+
+        public static List<Fjender> fjender = new List<Fjender>
+        {
+            new Fjender("Mus", 2, 1),
+            new Fjender("Bandit", 5, 3),
+            new Fjender("Drage", 15, 8)
+
+        };
+
+
+        public Fjender (string name, int hp, int skade)
+        {
+            Name = name;
+            HP = hp;
+            Skade = skade;
+        }
     }
+
 }
