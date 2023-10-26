@@ -33,11 +33,9 @@ class Program
         };
         locations[0].Avaliblelocations.Add(locations[1]);
 
-        // Initialize the player
-        Spiller player = new Spiller("Rejsene");
 
         // Start the game
-        Console.WriteLine("Velkommen, " + player.Name + "!");
+        Console.WriteLine("Velkommen, " + navn + "!");
         Console.WriteLine("Du er på en rejse for at få skejs.");
         Console.WriteLine("Vælg din vej:");
 
@@ -64,7 +62,7 @@ class Program
 
             if (action == 2)
             {
-                Console.WriteLine("Ingen skejs til dig nørd, L, " + player.Name + "!");
+                Console.WriteLine("Ingen skejs til dig nørd, L, " + navn + "!");
                 break;
             }
 
@@ -77,7 +75,8 @@ class Program
             Console.WriteLine("3. En Sej Pind");
             int våbenvalg = GetChoice(1, 3);
 
-            Console.WriteLine("Du går videre fra " + currentLocation.Name + "");
+            Console.WriteLine("Du går videre fra " + currentLocation.Name + " Hvor går du nu hen?");
+
 
         }
     }
@@ -93,7 +92,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("Invalid input. Please enter a valid choice.");
+                Console.WriteLine("DU HAR IKKE KORREKT. FUCKING PRØV IGEN.");
             }
         }
     }
