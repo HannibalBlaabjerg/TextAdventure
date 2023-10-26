@@ -7,36 +7,28 @@ using System.Threading.Tasks;
 namespace TextAdventure
 {
 
-    class mus
+    class Fjender
     {
-        int HP = 2;
+        public string Name;
+        public int HP;
+        public int Skade;
 
-        int Skade = 1;
 
-        public void attack
+        public static List<Fjender> fjender = new List<Fjender>
         {
+            new Fjender("Mus", 2, 1),
+            new Fjender("Bandit", 5, 3),
+            new Fjender("Drage", 15, 8)
+
+        };
 
 
+        public Fjender (string name, int hp, int skade)
+        {
+            Name = name;
+            HP = hp;
+            Skade = skade;
         }
-
-    }
-
-    class Bandit
-    {
-        int HP = 6;
-
-        int Skade = 4;
-
-
-    }
-
-    class Drage
-    {
-        int HP = 15;
-
-        int Skade = 7;
-
-
     }
 
 }
