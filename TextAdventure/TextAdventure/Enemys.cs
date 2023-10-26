@@ -6,7 +6,37 @@ using System.Threading.Tasks;
 
 namespace TextAdventure
 {
-    internal class Enemys
+
+    class rat
     {
+        int HP = 2;
+
+        int Skade = 1;
+
+        public void attack
+        {
+
+
+        }
+
     }
+
+    class Bandit
+    {
+        int HP = 6;
+
+        int Skade = 4;
+
+
+    }
+
+    class Dragon
+    {
+        int HP = 15;
+
+        int Skade = 7;
+
+
+    }
+
 }
