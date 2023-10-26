@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using TextAdventure;
 
 class Program
 {
     static void Main(string[] args)
     {
+        
         // Create a list of locations
         List<Location> locations = new List<Location>
         {
             new Location("Forest", "A dense forest with tall trees and wildlife."),
             new Location("Cave", "A dark and mysterious cave entrance."),
             new Location("Beach", "A sandy beach with waves crashing on the shore.")
+
         };
 
         // Initialize the player
@@ -89,4 +92,5 @@ class Player
     {
         Name = name;
     }
+    
 }
