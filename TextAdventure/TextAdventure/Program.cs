@@ -58,6 +58,7 @@ class Program
             Console.WriteLine("Hvad vil du?");
             Console.WriteLine("1. Udforske");
             Console.WriteLine("2. Forlade spillet");
+
             int action = GetChoice(1, 2);
 
             if (action == 2)
@@ -65,7 +66,7 @@ class Program
                 Console.WriteLine("Ingen skejs til dig nørd, L, " + navn + "!");
                 break;
             }
-
+           
 
             // Explore the location
             Console.WriteLine("Du udforsker " + currentLocation.Name + " og finder en bunke med våben.");
@@ -86,7 +87,7 @@ class Program
         int choice;
         while (true)
         {
-            if (int.TryParse(Console.ReadLine(), out choice) && choice >= min && choice <= max)
+            if (int.TryParse(Console.ReadKey(true).KeyChar.ToString(), out choice) && choice >= min && choice <= max)
             {
                 return choice;
             }
