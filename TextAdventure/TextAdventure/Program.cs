@@ -87,7 +87,7 @@ class Program
 
             Console.WriteLine("Du går videre fra " + currentLocation.Name + " Hvor går du nu hen?");
 
-            Console.WriteLine("Områder:");
+            
             for (int i = 0; i < locations1.Count; i++)
             {
                 Console.WriteLine(i + ". " + locations1[i].Name);
