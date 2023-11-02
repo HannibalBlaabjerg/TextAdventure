@@ -26,9 +26,17 @@ class Program
         // Create a list of locations
         List<Location> locations = new List<Location>
         {
-            new Location("Skov", "Meget farlig Skov."),
-            new Location("Grotte", "Meget sort Grotte."),
-            new Location("Strand", "Meget sandet Strand.")
+            new Location("Skoven", "Meget farlig Skov."),
+            new Location("Grotten", "Meget sort Grotte."),
+            new Location("Stranden", "Meget sandet Strand.")
+
+        };
+        List<Location> locations1 = new List<Location>
+        {
+            new Location("By", "En meget fredelig by"),
+            new Location("Flod", "En smuk flod inde i en skov"),
+            new Location("Kloake", "Mikkels værelse"),
+
 
         };
         locations[0].Avaliblelocations.Add(locations[1]);
@@ -76,8 +84,23 @@ class Program
             Console.WriteLine("3. En Sej Pind");
             int våbenvalg = GetChoice(1, 3);
 
+
             Console.WriteLine("Du går videre fra " + currentLocation.Name + " Hvor går du nu hen?");
 
+            Console.WriteLine("Områder:");
+            for (int i = 0; i < locations1.Count; i++)
+            {
+                Console.WriteLine(i + ". " + locations1[i].Name);
+            }
+
+            choice = GetChoice(0, locations1.Count - 1);
+            Location currentLocation1 = locations1[choice];
+
+
+            if(currentLocation1 == locations1[1])
+            {
+                Console.WriteLine("Du møder en bandidos");
+            }
 
         }
     }

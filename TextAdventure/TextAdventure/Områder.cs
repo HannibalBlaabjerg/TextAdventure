@@ -10,7 +10,7 @@ namespace TextAdventure
      class Location
     {
         public List<Location> Avaliblelocations = new List<Location>();
-
+         
         public string Name { get; }
         public string Description { get; }
 
