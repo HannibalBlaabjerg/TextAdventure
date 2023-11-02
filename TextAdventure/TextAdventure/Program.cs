@@ -92,7 +92,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("DU HAR IKKE KORREKT. FUCKING PRØV IGEN.");
+                Console.WriteLine("DU HAR IKKE KORREKT. PRØV IGEN.");
             }
         }
     }
