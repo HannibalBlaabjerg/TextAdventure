@@ -12,12 +12,12 @@ namespace TextAdventure
         public string Name;
         public int HP;
         public int Skade;
-
+        public Spiller target { get; }
 
 
         public static List<Fjender> fjender = new List<Fjender>
         {
-            new Fjender("Mus", 2, 1),
+            new Fjender("Rotte", 2, 1),
             new Fjender("Bandit", 5, 3),
             new Fjender("Drage", 15, 8)
 
@@ -28,10 +28,16 @@ namespace TextAdventure
             HP = hp;
             Skade = skade;
         }
-        public void angreb(Spiller target)
+        public void angreb()
         {
             Console.WriteLine(Name + " angriber dig og gør " + Skade);
             target.HP -= Skade;
+
+            if(target.evade == true)
+            {
+                Console.WriteLine("Monsteret prøver at ramme dig, men ramte ikke");
+                target.evade = false;
+            }
 
         }
 
