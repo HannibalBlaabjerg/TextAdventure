@@ -17,9 +17,9 @@ namespace TextAdventure
 
         public static List<Fjender> fjender = new List<Fjender>
         {
-            new Fjender("Rotte", 2, 1),
-            new Fjender("Bandit", 5, 3),
-            new Fjender("Drage", 15, 8)
+            new Fjender("Rotte", 2, 1), //I kloak
+            new Fjender("Bandit", 5, 3), //I by
+            new Fjender("Drage", 15, 8) //I flod
 
         };
         public Fjender (string name, int hp, int skade)
