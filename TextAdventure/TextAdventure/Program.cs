@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using TextAdventure;
 
 class Program
@@ -84,6 +85,12 @@ class Program
             Console.WriteLine("3. En Sej Pind");
             int våbenvalg = GetChoice(1, 3);
 
+            
+            if(våbenvalg == 1)
+            {
+                Backpack.backpack.Add(Items.items[0].Name);
+            }
+           
 
             Console.WriteLine("Du går videre fra " + currentLocation.Name + " Hvor går du nu hen?");
 
@@ -97,10 +104,11 @@ class Program
             Location currentLocation1 = locations1[choice];
 
 
-            if(currentLocation1 == locations1[1])
+            if(currentLocation1 == locations1[0])
             {
-                Console.WriteLine("Du møder en bandidos");
+                Console.WriteLine("Du møder en " + Fjender.fjender[1].Name +". Hvad gør du");
             }
+
 
         }
     }
