@@ -88,7 +88,20 @@ class Program
             
             if(våbenvalg == 1)
             {
+                Console.WriteLine("Du har valgt et " + Items.items[0].Name);
                 Backpack.backpack.Add(Items.items[0].Name);
+            }
+
+            if(våbenvalg == 2)
+            {
+                Console.WriteLine("Du har valgt en " + Items.items[1].Name);
+                Backpack.backpack.Add(Items.items[1].Name);
+            }
+
+            if(våbenvalg == 3)
+            {
+                Console.WriteLine("Du har valgt en " + Items.items[2].Name);
+                Backpack.backpack.Add(Items.items[2].Name);
             }
            
 
