@@ -12,7 +12,6 @@ namespace TextAdventure
         public string Name;
         public int HP;
         public int Skade;
-        public Spiller target { get; }
 
 
         public static List<Fjender> fjender = new List<Fjender>
@@ -28,7 +27,7 @@ namespace TextAdventure
             HP = hp;
             Skade = skade;
         }
-        public void angreb()
+        public void angreb(Spiller target)
         {
             Console.WriteLine(Name + " angriber dig og gør " + Skade + " skade");
             target.HP -= Skade;
