@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Numerics;
 using TextAdventure;
 
 class Program
@@ -23,6 +24,8 @@ class Program
         Console.WriteLine("Tryk på en knap for at fortsætte");
         Console.ReadKey(true);
         Console.Clear();
+
+        Spiller player = new Spiller(navn);
         
         // Create a list of locations
         List<Location> locations = new List<Location>
@@ -122,8 +125,45 @@ class Program
                 Console.WriteLine("Du møder en " + Fjender.fjender[1].Name +". Hvad gør du");
             }
 
-            
 
+            Console.WriteLine("1. Du angriber");
+            Console.WriteLine("2. Du undviger");
+            int angribsvalg = GetChoice(1, 2);
+
+            if (angribsvalg == 1)
+            {
+                player.Angreb(Fjender.fjender[1]);
+            }
+
+            if (angribsvalg == 2)
+            {
+                player.Evade();
+            }
+
+            if (Fjender.fjender[1].HP > 0 && angribsvalg == 1)
+            {
+                Console.WriteLine("Du angriber men slår ikke fjenden ihjel. \n Du tager " + Fjender.fjender[1].Skade + " i skade");
+                Console.WriteLine("Prøv igen");
+                
+                Console.WriteLine("1. Du angriber");
+                Console.WriteLine("2. Du undviger");
+
+                if (angribsvalg == 1)
+                {
+                    player.Angreb(Fjender.fjender[1]);
+                }
+
+                if (angribsvalg == 2)
+                {
+                    player.Evade();
+                }
+            }
+
+                if (Fjender.fjender[1].HP <= 0)
+            {
+                Console.WriteLine("Du slår fjenden ihjel.");
+                Console.ReadKey(true);
+            }
 
         }
     }
