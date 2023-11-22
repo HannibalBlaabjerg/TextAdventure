@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextAdventure
 {
-    internal class Backpack
+    public class Backpack
     {
         public static List<string> backpack = new List<string>();
     }

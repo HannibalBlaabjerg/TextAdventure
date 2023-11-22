@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextAdventure;
 
 namespace TextAdventure
 {
@@ -10,7 +11,7 @@ namespace TextAdventure
     {
         public string Name { get; }
         public int HP = 10;
-        public Items Våben {  get; }
+        public backp
         public bool evade = false;
 
         public Spiller(string name)
