@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextAdventure
 {
-    internal class Items
+    public class Items
     {
         public static List<Items> items = new List<Items>
         {

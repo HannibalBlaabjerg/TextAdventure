@@ -8,6 +8,6 @@ namespace TextAdventure
 {
     public class Backpack
     {
-        public static List<string> backpack = new List<string>();
+        public static List<Items> backpack = new List<Items>();
     }
 }

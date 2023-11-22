@@ -11,7 +11,7 @@ namespace TextAdventure
     {
         public string Name { get; }
         public int HP = 10;
-        public backp
+        
         public bool evade = false;
 
         public Spiller(string name)
@@ -21,9 +21,9 @@ namespace TextAdventure
         public void Angreb (Fjender enemy)
         {
             Console.WriteLine("Du bruger dit våben til at slå ud efter " + enemy.Name);
-            Console.WriteLine("Du rammer og gør "+ Våben.Damage +" skade");
-            enemy.HP -= Våben.Damage;
-
+            Console.WriteLine("Du rammer og gør "+ Backpack.backpack[0].Damage +" skade");
+            enemy.HP -= Backpack.backpack[0].Damage;
+            
         }
 
         public void Evade()
