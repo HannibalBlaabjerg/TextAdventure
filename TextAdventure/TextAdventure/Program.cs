@@ -109,6 +109,8 @@ class Program
                 Console.WriteLine("Du møder en " + Fjender.fjender[1].Name +". Hvad gør du");
             }
 
+            
+
 
         }
     }
