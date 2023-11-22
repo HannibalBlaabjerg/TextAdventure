@@ -125,28 +125,11 @@ class Program
                 Console.WriteLine("Du møder en " + Fjender.fjender[1].Name +". Hvad gør du");
             }
 
-
-            Console.WriteLine("1. Du angriber");
-            Console.WriteLine("2. Du undviger");
-            int angribsvalg = GetChoice(1, 2);
-
-            if (angribsvalg == 1)
+            while (true)
             {
-                player.Angreb(Fjender.fjender[1]);
-            }
-
-            if (angribsvalg == 2)
-            {
-                player.Evade();
-            }
-
-            if (Fjender.fjender[1].HP > 0 && angribsvalg == 1)
-            {
-                Console.WriteLine("Du angriber men slår ikke fjenden ihjel. \n Du tager " + Fjender.fjender[1].Skade + " i skade");
-                Console.WriteLine("Prøv igen");
-                
                 Console.WriteLine("1. Du angriber");
                 Console.WriteLine("2. Du undviger");
+                int angribsvalg = GetChoice(1, 2);
 
                 if (angribsvalg == 1)
                 {
@@ -156,14 +139,27 @@ class Program
                 if (angribsvalg == 2)
                 {
                     player.Evade();
+                    Fjender.fjender[1].angreb(player);
                 }
-            }
+
+                if (Fjender.fjender[1].HP > 0 && angribsvalg == 1)
+                {
+                    Console.WriteLine("Du angriber men slår ikke fjenden ihjel.");
+
+                    Fjender.fjender[1].angreb(player);
+                    Console.WriteLine("Prøv igen");
+                }
+
+             
 
                 if (Fjender.fjender[1].HP <= 0)
-            {
-                Console.WriteLine("Du slår fjenden ihjel.");
-                Console.ReadKey(true);
+                {
+                    Console.WriteLine("Du slår fjenden ihjel.");
+                    Console.ReadKey(true);
+                    break;
+                }
             }
+            
 
         }
     }
