@@ -29,8 +29,11 @@ namespace TextAdventure
         }
         public void angreb(Spiller target)
         {
-            Console.WriteLine(Name + " angriber dig og gør " + Skade + " skade");
-            target.HP -= Skade;
+            if (target.evade == false)
+            {
+                Console.WriteLine(Name + " angriber dig og gør " + Skade + " skade");
+                target.HP -= Skade;
+            }
 
             if(target.evade == true)
             {
