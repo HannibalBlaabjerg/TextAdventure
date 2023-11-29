@@ -18,7 +18,8 @@ namespace TextAdventure
         {
             new Fjender("Rotte", 2, 1), //I kloak
             new Fjender("Bandit", 5, 3), //I by
-            new Fjender("Drage", 15, 8) //I flod
+            new Fjender("Krokodille",7,5), //I flod
+            new Fjender("Drage", 15, 8) //I Borg
 
         };
         public Fjender (string name, int hp, int skade)
