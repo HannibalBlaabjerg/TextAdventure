@@ -171,8 +171,7 @@ class Program
                 }
 
 
-
-
+             
             }
 
 
@@ -223,7 +222,7 @@ class Program
                     return;
                 }
 
-
+                
             }
 
             if (currentLocation1 == locations1[2])
@@ -273,17 +272,19 @@ class Program
                     return;
                 }
 
+                
 
             }
 
 
-            Console.WriteLine("Du ankommer til en ", location2[0], "\n Tryk for at fortsætte");
+            Console.WriteLine("Du ankommer til en Borg");
+            Console.WriteLine("Tryk for at fortsætte");
             Console.ReadKey(true);
             Location currentLocation2 = location2[0];
 
             if (currentLocation2 == location2[0])
             {
-                Console.WriteLine("Du møder en " + Fjender.fjender[0].Name + ". Hvad gør du");
+                Console.WriteLine("Du møder en " + Fjender.fjender[3].Name + ". Hvad gør du");
             }
 
             while (currentLocation2 == location2[0])
@@ -294,26 +295,26 @@ class Program
 
                 if (angribsvalg == 1)
                 {
-                    player.Angreb(Fjender.fjender[0]);
+                    player.Angreb(Fjender.fjender[3]);
                 }
 
                 if (angribsvalg == 2)
                 {
                     player.Evade();
-                    Fjender.fjender[0].angreb(player);
+                    Fjender.fjender[3].angreb(player);
                 }
 
-                if (Fjender.fjender[0].HP > 0 && angribsvalg == 1)
+                if (Fjender.fjender[3].HP > 0 && angribsvalg == 1)
                 {
                     Console.WriteLine("Du angriber men slår ikke fjenden ihjel.");
 
-                    Fjender.fjender[0].angreb(player);
+                    Fjender.fjender[3].angreb(player);
                     Console.WriteLine("Prøv igen");
                 }
 
 
 
-                if (Fjender.fjender[0].HP <= 0)
+                if (Fjender.fjender[3].HP <= 0)
                 {
                     Console.WriteLine("Du slår fjenden ihjel.");
                     Console.ReadKey(true);
@@ -328,9 +329,12 @@ class Program
                     return;
                 }
 
-
+             
             }
 
+            Console.Clear();
+            Console.WriteLine("Tillykke du har vundet");
+            return;
 
         }
 
