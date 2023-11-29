@@ -15,7 +15,7 @@ class Program
 
         Console.WriteLine("Skriv dit navn:");
         string navn = Console.ReadLine();
-        while(navn.Length <=1 && navn.Length >= 10)
+        while (navn.Length <= 1 && navn.Length >= 10)
         {
             Console.WriteLine("Dit navn skal være mellem 1 og 10 tegn");
             navn = Console.ReadLine();
@@ -26,7 +26,7 @@ class Program
         Console.Clear();
 
         Spiller player = new Spiller(navn);
-        
+
         // Create a list of locations
         List<Location> locations = new List<Location>
         {
@@ -78,7 +78,7 @@ class Program
                 Console.WriteLine("Ingen skejs til dig nørd, L, " + navn + "!");
                 break;
             }
-           
+
 
             // Explore the location
             Console.WriteLine("Du udforsker " + currentLocation.Name + " og finder en bunke med våben.");
@@ -88,29 +88,29 @@ class Program
             Console.WriteLine("3. En Sej Pind");
             int våbenvalg = GetChoice(1, 3);
 
-            
-            if(våbenvalg == 1)
+
+            if (våbenvalg == 1)
             {
                 Console.WriteLine("Du har valgt et " + Items.items[0].Name);
                 Backpack.backpack.Add(Items.items[0]);
             }
 
-            if(våbenvalg == 2)
+            if (våbenvalg == 2)
             {
                 Console.WriteLine("Du har valgt en " + Items.items[1].Name);
                 Backpack.backpack.Add(Items.items[1]);
             }
 
-            if(våbenvalg == 3)
+            if (våbenvalg == 3)
             {
                 Console.WriteLine("Du har valgt en " + Items.items[2].Name);
                 Backpack.backpack.Add(Items.items[2]);
             }
-           
+
 
             Console.WriteLine("Du går videre fra " + currentLocation.Name + " Hvor går du nu hen?");
 
-            
+
             for (int i = 0; i < locations1.Count; i++)
             {
                 Console.WriteLine(i + ". " + locations1[i].Name);
@@ -120,12 +120,12 @@ class Program
             Location currentLocation1 = locations1[choice];
 
 
-            if(currentLocation1 == locations1[0])
+            if (currentLocation1 == locations1[0])
             {
-                Console.WriteLine("Du møder en " + Fjender.fjender[1].Name +". Hvad gør du");
+                Console.WriteLine("Du møder en " + Fjender.fjender[1].Name + ". Hvad gør du");
             }
 
-            while (true)
+            while (currentLocation1 == locations1[0])
             {
                 Console.WriteLine("1. Du angriber");
                 Console.WriteLine("2. Du undviger");
@@ -150,7 +150,7 @@ class Program
                     Console.WriteLine("Prøv igen");
                 }
 
-             
+
 
                 if (Fjender.fjender[1].HP <= 0)
                 {
@@ -158,24 +158,137 @@ class Program
                     Console.ReadKey(true);
                     break;
                 }
+
+                if (player.HP <= 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("FUCK du er ringe du er død");
+                    return;
+                }
+
+
+
+
             }
-            
+
+
+            if (currentLocation1 == locations1[1])
+            {
+                Console.WriteLine("Du møder en " + Fjender.fjender[2].Name + ". Hvad gør du");
+            }
+
+            while (currentLocation1 == locations1[1])
+            {
+                Console.WriteLine("1. Du angriber");
+                Console.WriteLine("2. Du undviger");
+                int angribsvalg = GetChoice(1, 2);
+
+                if (angribsvalg == 1)
+                {
+                    player.Angreb(Fjender.fjender[2]);
+                }
+
+                if (angribsvalg == 2)
+                {
+                    player.Evade();
+                    Fjender.fjender[2].angreb(player);
+                }
+
+                if (Fjender.fjender[2].HP > 0 && angribsvalg == 1)
+                {
+                    Console.WriteLine("Du angriber men slår ikke fjenden ihjel.");
+
+                    Fjender.fjender[2].angreb(player);
+                    Console.WriteLine("Prøv igen");
+                }
+
+
+
+                if (Fjender.fjender[2].HP <= 0)
+                {
+                    Console.WriteLine("Du slår fjenden ihjel.");
+                    Console.ReadKey(true);
+                    break;
+                }
+
+                if (player.HP <= 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("FUCK du er ringe du er død");
+                    return;
+                }
+
+
+            }
+
+            if (currentLocation1 == locations1[2])
+            {
+                Console.WriteLine("Du møder en " + Fjender.fjender[0].Name + ". Hvad gør du");
+            }
+
+            while (currentLocation1 == locations1[2])
+            {
+                Console.WriteLine("1. Du angriber");
+                Console.WriteLine("2. Du undviger");
+                int angribsvalg = GetChoice(1, 2);
+
+                if (angribsvalg == 1)
+                {
+                    player.Angreb(Fjender.fjender[0]);
+                }
+
+                if (angribsvalg == 2)
+                {
+                    player.Evade();
+                    Fjender.fjender[0].angreb(player);
+                }
+
+                if (Fjender.fjender[0].HP > 0 && angribsvalg == 1)
+                {
+                    Console.WriteLine("Du angriber men slår ikke fjenden ihjel.");
+
+                    Fjender.fjender[0].angreb(player);
+                    Console.WriteLine("Prøv igen");
+                }
+
+
+
+                if (Fjender.fjender[0].HP <= 0)
+                {
+                    Console.WriteLine("Du slår fjenden ihjel.");
+                    Console.ReadKey(true);
+                    break;
+                }
+
+                if (player.HP <= 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("FUCK du er ringe du er død");
+                    return;
+                }
+
+
+
+
+            }
+
+
 
         }
-    }
 
-    static int GetChoice(int min, int max)
-    {
-        int choice;
-        while (true)
+        static int GetChoice(int min, int max)
         {
-            if (int.TryParse(Console.ReadKey(true).KeyChar.ToString(), out choice) && choice >= min && choice <= max)
+            int choice;
+            while (true)
             {
-                return choice;
-            }
-            else
-            {
-                Console.WriteLine("DU HAR IKKE KORREKT. PRØV IGEN.");
+                if (int.TryParse(Console.ReadKey(true).KeyChar.ToString(), out choice) && choice >= min && choice <= max)
+                {
+                    return choice;
+                }
+                else
+                {
+                    Console.WriteLine("DU HAR IKKE KORREKT. PRØV IGEN.");
+                }
             }
         }
     }
