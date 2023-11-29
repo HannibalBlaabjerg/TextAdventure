@@ -40,9 +40,12 @@ class Program
             new Location("By", "En meget fredelig by"),
             new Location("Flod", "En smuk flod inde i en skov"),
             new Location("Kloake", "Mikkels værelse"),
-
-
         };
+        List<Location> location2 = new List<Location>
+        {
+            new Location("Borg", "Hannibals mor")
+        };
+
         locations[0].Avaliblelocations.Add(locations[1]);
 
 
@@ -156,6 +159,7 @@ class Program
                 {
                     Console.WriteLine("Du slår fjenden ihjel.");
                     Console.ReadKey(true);
+                    Console.Clear();
                     break;
                 }
 
@@ -208,6 +212,7 @@ class Program
                 {
                     Console.WriteLine("Du slår fjenden ihjel.");
                     Console.ReadKey(true);
+                    Console.Clear();
                     break;
                 }
 
@@ -257,6 +262,7 @@ class Program
                 {
                     Console.WriteLine("Du slår fjenden ihjel.");
                     Console.ReadKey(true);
+                    Console.Clear();
                     break;
                 }
 
@@ -268,10 +274,62 @@ class Program
                 }
 
 
+            }
+
+
+            Console.WriteLine("Du ankommer til en ", location2[0], "\n Tryk for at fortsætte");
+            Console.ReadKey(true);
+            Location currentLocation2 = location2[0];
+
+            if (currentLocation2 == location2[0])
+            {
+                Console.WriteLine("Du møder en " + Fjender.fjender[0].Name + ". Hvad gør du");
+            }
+
+            while (currentLocation2 == location2[0])
+            {
+                Console.WriteLine("1. Du angriber");
+                Console.WriteLine("2. Du undviger");
+                int angribsvalg = GetChoice(1, 2);
+
+                if (angribsvalg == 1)
+                {
+                    player.Angreb(Fjender.fjender[0]);
+                }
+
+                if (angribsvalg == 2)
+                {
+                    player.Evade();
+                    Fjender.fjender[0].angreb(player);
+                }
+
+                if (Fjender.fjender[0].HP > 0 && angribsvalg == 1)
+                {
+                    Console.WriteLine("Du angriber men slår ikke fjenden ihjel.");
+
+                    Fjender.fjender[0].angreb(player);
+                    Console.WriteLine("Prøv igen");
+                }
+
+
+
+                if (Fjender.fjender[0].HP <= 0)
+                {
+                    Console.WriteLine("Du slår fjenden ihjel.");
+                    Console.ReadKey(true);
+                    Console.Clear();
+                    break;
+                }
+
+                if (player.HP <= 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("FUCK du er ringe du er død");
+                    return;
+                }
 
 
             }
-
 
 
         }
