@@ -97,19 +97,19 @@ class Program
 
             if (våbenvalg == 1)
             {
-                Console.WriteLine("Du har valgt et " + Items.items[0].Name);
+                Console.WriteLine("Du har valgt et " + Items.items[0].Name + Items.items[0].Description);
                 Backpack.backpack.Add(Items.items[0]);
             }
 
             if (våbenvalg == 2)
             {
-                Console.WriteLine("Du har valgt en " + Items.items[1].Name);
+                Console.WriteLine("Du har valgt en " + Items.items[1].Name + Items.items[1].Description);
                 Backpack.backpack.Add(Items.items[1]);
             }
 
             if (våbenvalg == 3)
             {
-                Console.WriteLine("Du har valgt en " + Items.items[2].Name);
+                Console.WriteLine("Du har valgt en " + Items.items[2].Name + Items.items[2].Description);
                 Backpack.backpack.Add(Items.items[2]);
             }
 
