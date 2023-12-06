@@ -8,10 +8,12 @@ class Program
 {
     static void Main(string[] args)
     {
+        //Her siger vi velkommen til spillet
         Console.WriteLine("Velkommen til Text baseret spil");
         Console.WriteLine("Tryk på en knap for at fortsætte");
         Console.ReadKey(true);
         Console.Clear();
+        //Så får man lov til at vælge sit navn. Vi skriver også at dit navn kun kan være mellem 1 til 10 tegn
 
         Console.WriteLine("Skriv dit navn:");
         string navn = Console.ReadLine();
@@ -25,9 +27,10 @@ class Program
         Console.ReadKey(true);
         Console.Clear();
 
+        //Her er player objektet som bruges når man gerne vil refere til playeren 
         Spiller player = new Spiller(navn);
 
-        // Create a list of locations
+        //Her er en liste over de områder der bliver brugt i spillet 
         List<Location> locations = new List<Location>
         {
             new Location("Skoven", "Meget farlig Skov."),
@@ -284,7 +287,7 @@ class Program
 
             if (currentLocation2 == location2[0])
             {
-                Console.WriteLine("Du møder en " + Fjender.fjender[3].Name + ". Hvad gør du");
+                Console.WriteLine("Du møder Dragen Zork. Hvad gør du");
             }
 
             while (currentLocation2 == location2[0])
